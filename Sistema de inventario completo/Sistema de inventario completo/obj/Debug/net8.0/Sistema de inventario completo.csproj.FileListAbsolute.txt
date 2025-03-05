@@ -1,0 +1,14 @@
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\bin\Debug\net8.0\Sistema de inventario completo.exe
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\bin\Debug\net8.0\Sistema de inventario completo.deps.json
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\bin\Debug\net8.0\Sistema de inventario completo.runtimeconfig.json
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\bin\Debug\net8.0\Sistema de inventario completo.dll
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\bin\Debug\net8.0\Sistema de inventario completo.pdb
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\obj\Debug\net8.0\Sistema de inventario completo.GeneratedMSBuildEditorConfig.editorconfig
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\obj\Debug\net8.0\Sistema de inventario completo.AssemblyInfoInputs.cache
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\obj\Debug\net8.0\Sistema de inventario completo.AssemblyInfo.cs
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\obj\Debug\net8.0\Sistema de inventario completo.csproj.CoreCompileInputs.cache
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\obj\Debug\net8.0\Sistema de inventario completo.dll
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\obj\Debug\net8.0\refint\Sistema de inventario completo.dll
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\obj\Debug\net8.0\Sistema de inventario completo.pdb
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\obj\Debug\net8.0\Sistema de inventario completo.genruntimeconfig.cache
+F:\Visual Studio community\Sistema de inventario completo\Sistema de inventario completo\obj\Debug\net8.0\ref\Sistema de inventario completo.dll
