@@ -97,7 +97,6 @@ class Inventario
             return;
         }
 
-        // Verificar si el producto ya existe
         if (ProductoExistente(nuevoProductoID))
         {
             Console.WriteLine("El producto con este ID ya existe.");
@@ -146,11 +145,11 @@ class Inventario
         string[] productos = File.ReadAllLines(rutaArchivoProductos);
         foreach (var linea in productos)
         {
-            if (linea.Contains("ID")) continue;  // Ignorar encabezados
+            if (linea.Contains("ID")) continue;
             var columnas = linea.Split(',');
             if (int.TryParse(columnas[0], out int id) && id == idProducto)
             {
-                return true; // El producto ya existe
+                return true;
             }
         }
         return false;
@@ -162,8 +161,8 @@ class Inventario
 
         string[] productos = File.ReadAllLines(rutaArchivoProductos);
 
-        // Llenar la matriz de inventario con los productos leídos
-        int[] cantidadProductosPorCategoria = new int[categorias.Length];  // Mantener el conteo de productos por categoría
+
+        int[] cantidadProductosPorCategoria = new int[categorias.Length];
         foreach (var linea in productos)
         {
             if (linea.Contains("ID")) continue;
@@ -173,7 +172,7 @@ class Inventario
                 string categoria = columnas[2];
                 int cantidad = int.Parse(columnas[4]);
 
-                // Buscar la categoría en la matriz y agregar el producto
+
                 for (int i = 0; i < categorias.Length; i++)
                 {
                     if (categorias[i] == categoria)
@@ -189,7 +188,7 @@ class Inventario
             }
         }
 
-        // Mostrar el inventario de la matriz
+
         for (int i = 0; i < categorias.Length; i++)
         {
             Console.WriteLine($"{i + 1} {categorias[i]}\n");
@@ -211,7 +210,7 @@ class Inventario
             return;
         }
 
-        // Verificar si el cliente ya existe
+
         if (ClienteExistente(nuevoClienteID))
         {
             Console.WriteLine("El cliente con este ID ya existe.");
@@ -237,11 +236,11 @@ class Inventario
         string[] clientes = File.ReadAllLines(rutaArchivoClientes);
         foreach (var linea in clientes)
         {
-            if (linea.Contains("ID")) continue;  // Omite el encabezado
+            if (linea.Contains("ID")) continue;
             var columnas = linea.Split(',');
             if (int.TryParse(columnas[0], out int id) && id == idCliente)
             {
-                return true; // El cliente ya existe
+                return true;
             }
         }
         return false;
@@ -255,11 +254,11 @@ class Inventario
 
         foreach (var linea in clientes)
         {
-            if (linea.Contains("ID")) continue;  // Omite encabezado
+            if (linea.Contains("ID")) continue;
 
             var columnas = linea.Split(',');
 
-            // Formatear la salida de cada cliente
+
             Console.WriteLine($"ID: {columnas[0]}");
             Console.WriteLine($"Nombre: {columnas[1]}");
             Console.WriteLine($"Dirección: {columnas[2]}");
@@ -269,7 +268,7 @@ class Inventario
 
     private void BorrarDatosAlSalir()
     {
-        // Elimina todos los datos de productos y clientes al salir
+
         File.Delete(rutaArchivoProductos);
         File.Delete(rutaArchivoClientes);
     }
@@ -278,7 +277,7 @@ class Inventario
     {
         Console.WriteLine("Registrar nueva venta");
 
-        // Paso 1: Selección de cliente
+
         Console.Write("Ingrese el ID del cliente: ");
         if (!int.TryParse(Console.ReadLine(), out int idCliente))
         {
@@ -295,7 +294,7 @@ class Inventario
         string clienteNombre = ObtenerNombreCliente(idCliente);
         Console.WriteLine($"Cliente seleccionado: {clienteNombre}");
 
-        // Paso 2: Selección de productos
+
         List<(int idProducto, string nombre, decimal precio, int cantidadEnStock)> productosDisponibles = ObtenerProductosDisponibles();
         if (productosDisponibles.Count == 0)
         {
@@ -338,7 +337,7 @@ class Inventario
             totalVenta += cantidad * productoSeleccionado.precio;
         }
 
-        // Paso 3: Mostrar el resumen de la venta
+
         Console.WriteLine("\nResumen de la venta:");
         Console.WriteLine($"Cliente: {clienteNombre}");
         foreach (var producto in productosComprados)
@@ -348,7 +347,7 @@ class Inventario
         }
         Console.WriteLine($"Total a pagar: {totalVenta:C}");
 
-        // Registrar la venta en un archivo (puedes hacerlo en un archivo de ventas si lo deseas)
+
         string ventaRegistrada = $"{idCliente},{clienteNombre},{string.Join(";", productosComprados.Select(p => $"{p.idProducto}-{p.cantidad}"))},{totalVenta}\n";
         File.AppendAllText(rutaArchivoVentas, ventaRegistrada);
         Console.WriteLine("Venta registrada con éxito.");
@@ -359,11 +358,11 @@ class Inventario
         string[] clientes = File.ReadAllLines(rutaArchivoClientes);
         foreach (var linea in clientes)
         {
-            if (linea.Contains("ID")) continue;  // Omite encabezado
+            if (linea.Contains("ID")) continue;
             var columnas = linea.Split(',');
             if (int.TryParse(columnas[0], out int id) && id == idCliente)
             {
-                return columnas[1]; // Retorna el nombre del cliente
+                return columnas[1];
             }
         }
         return string.Empty;
@@ -376,7 +375,7 @@ class Inventario
 
         foreach (var linea in productos)
         {
-            if (linea.Contains("ID")) continue;  // Omite encabezado
+            if (linea.Contains("ID")) continue;
             var columnas = linea.Split(',');
             if (columnas.Length >= 5 && int.TryParse(columnas[0], out int idProducto) &&
                 decimal.TryParse(columnas[3], out decimal precio) && int.TryParse(columnas[4], out int cantidadEnStock) && cantidadEnStock > 0)
